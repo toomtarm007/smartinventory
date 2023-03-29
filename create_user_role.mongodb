@@ -1,0 +1,26 @@
+
+const database = 'admin'
+
+// เลือกฐานข้อมูล
+use(database)
+
+// เรียกดูรายชื่อ user
+db.getUsers()
+
+// ลบรายชื่อ user
+// db.dropUsers("sakchai")
+
+// สร้าง user ใหม่
+db.createUser({
+    user: "sakchai",
+    pwd: "123456",
+    roles: [
+        {
+            role: "userAdminAnyDatabase",
+            db: "admin"
+        },
+        "readWriteAnyDatabase"
+    ]
+})
+
+
